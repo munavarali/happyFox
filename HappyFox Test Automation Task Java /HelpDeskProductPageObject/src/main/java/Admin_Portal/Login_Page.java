@@ -48,7 +48,7 @@ static class BasePage {
         }
 
     public class TablePage extends BasePage {
-
+	// How this locator will identified without using findelement?
     private By rowLocator = By.xpath("//table[@id='dataTable']/tbody/tr");
 
     public TablePage(WebDriver driver) {
