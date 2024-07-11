@@ -18,7 +18,7 @@ public class AdminPortalTest1stPage extends AppPage {
 		
 	}
 	
-	
+	// We can use driver.getTitle() to get the title of the web page.
 	@FindBy(xpath = "//span[@class='hf-top-bar_title_text hf-font-light']")
 	private WebElement Title;
 	
@@ -35,7 +35,8 @@ public class AdminPortalTest1stPage extends AppPage {
 	
 	@FindBy(linkText = "Priorities")
 	private WebElement Priorities;
-	
+
+	//The exception is handled in this method
 	public void clickPriorities() throws InterruptedException
  	{
 		sleep();
@@ -117,7 +118,7 @@ public class AdminPortalTest1stPage extends AppPage {
 			StatusesSection.click();
 		}
 		
-		
+		// Exception is not handled in this method
 		public void setDefaultStatus(String xpath) throws InterruptedException {                        
 			String Status = "//div[contains(text(),'"+xpath+"')]//following::td[3]";
 			WebElement abc = driver.findElement(By.xpath(Status));
@@ -132,7 +133,8 @@ public class AdminPortalTest1stPage extends AppPage {
 	public void clickPrioritySection() {
 		PrioritySection.click();
 	}
-	
+
+	//Can we update the relative xpaath if possible?
 	@FindBy(xpath = "/html[1]/body[1]/div[3]/div[1]/section[1]/section[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[9]/td[2]")
 	private WebElement NewPriority;
 	
@@ -182,7 +184,8 @@ public class AdminPortalTest1stPage extends AppPage {
 	    sleep();
 	    
 	}	
-	
+
+	//Exception didn't handled here.
 	public void ClickAddedPriority(String xpath) throws InterruptedException {
 		sleep();
 		String priority = "//span[contains(text(),'"+xpath+"')]";
@@ -280,7 +283,7 @@ public class AdminPortalTest1stPage extends AppPage {
 	}
 	
 	public void sleep() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(2000); // Is this really required?
 	}
 	
 	
