@@ -189,7 +189,7 @@ public void loginasAdmin() {
 			hpAdminPortalTest1.ClickAddedStatus(statusName);
 			System.out.println("Statuses clicked");
 			hpAdminPortalTest1.clickStatusDeleteLink();
-			//hpAdminPortalTest1.setNewDefaultStatus();
+			//hpAdminPortalTest1.setNewDefaultStatus();  // Remove unused code
 			hpAdminPortalTest1.clickDeleteConfirm();
 			System.out.println("Statuses deleted");  
 			hpAdminPortalTest1.clickProfile();
