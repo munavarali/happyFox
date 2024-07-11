@@ -40,7 +40,8 @@ public class AppPage {
 		PageFactory.initElements(driver, this);
 		maximizeWindow();
 	}
-	
+
+	//Webdriver is already declared globally. So we can deprecate this method.
 	public WebDriver getDriver() {
 		return this.driver;
 	}
@@ -61,6 +62,7 @@ public class AppPage {
 		driver.manage().timeouts().implicitlyWait(WAIT_TIME_SEC, TimeUnit.SECONDS);
 	}
 
+	//Since we set the global wait duration as 60 secs and call the duration in waitImplicitly(). We dont need this method.
 	public void waitImplicitly(int timeOutInSeconds) {
 		driver.manage().timeouts().implicitlyWait(timeOutInSeconds, TimeUnit.SECONDS);
 	}
@@ -88,7 +90,8 @@ public class AppPage {
 			javaScriptExecutor = (JavascriptExecutor) driver;
 		return javaScriptExecutor;
 	}
-	
+
+	//Proper naming convention is not folled this method. It should be scrollToElement.
 	public void scrolltoElement(String locator) {
 		try {
 			WebElement element = this.driver.findElement(By.xpath(locator));
@@ -98,10 +101,11 @@ public class AppPage {
 			
 		}
 	}
-	
+
+	//Proper naming convention is not folled this method. It should be scrollToElement.
 	public void scrolltoElement(WebElement element) throws InterruptedException {
 		getJavaScriptExecutor().executeScript("arguments[0].scrollIntoView(false)", element);
-		Thread.sleep(1000);
+		Thread.sleep(1000); // It is not good practice to use thread.sleep() instead we can use explicit wait since it a condition based.
 	}
 	
 	public void waitForVisible(WebElement element) {
@@ -128,13 +132,15 @@ public class AppPage {
 			path = WINDOWS_PATH_TO_TEST_DATA_DIR;
 		return (getCurrentWorkingDirectory()+ path+ fileName);
 	}
-	
+
+	// We can use System.getProperty("os.name") to fetch the os name. We dont need below methods.
 	public enum OSType {
 	    Windows, MacOS, Linux, Other
 	  };
 	  
 	 protected static OSType detectedOS;
-	 
+
+	//This method will always return windows since we calling the windows type.
 	 public static OSType getOperatingSystemType() 
 	 {
 		 detectedOS = OSType.Windows;
