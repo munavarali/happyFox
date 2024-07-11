@@ -35,7 +35,7 @@ public class AdminPortalTest2ndPage extends AppPage {
 		WebElement pqr = driver.findElement(By.xpath(ticket));
 		hoverOverElementUsingJS(pqr);
 	    pqr.click();
-	    sleep();  
+	    sleep();  // Can we use selenium wait here?
 	    
 	}	
      
@@ -151,7 +151,8 @@ public class AdminPortalTest2ndPage extends AppPage {
   		return new AdminPortalTest1stPage(driver);
   		
    	}
-   
+
+	//We can avoid this method
      public void sleep() throws InterruptedException {
     	 Thread.sleep(2000);
      }
