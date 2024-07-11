@@ -119,7 +119,8 @@ public class SupportPortalPage extends AppPage{
 		   CreateTicket.click();
 		   return new AdminPortalTest2ndPage(driver);
 	 }
-	
+
+	//We can remove this and use selenium wait.
      public void sleep() throws InterruptedException {
     	 Thread.sleep(1000);
      }
