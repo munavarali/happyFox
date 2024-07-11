@@ -11,7 +11,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void beforeSuite() {
-    	
+    	// We can use webdriverManager to initialize the chromedriver.
     	System.setProperty("webdriver.chrome.driver","C:\\Users\\test\\Desktop\\D drive\\automation\\Chrome driver\\chromedriver.exe");
         driver = new ChromeDriver();
     }
@@ -19,7 +19,7 @@ public class BaseTest {
     @AfterSuite
     public void afterSuite() {
         if(null != driver) {
-            driver.close();
+            driver.close(); // We dont need to use both close() and quit(). driver.quit() itself close all browser windows and safely end the session.
             driver.quit();
         }
     }
